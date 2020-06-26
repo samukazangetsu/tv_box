@@ -303,16 +303,17 @@ class _PagePlansState extends State<PagePlans> {
                                 FlatButton.icon(
                                   onPressed: () {
                                     final _pagamento = MercadoPago();
+                                    String _url;
                                     _pagamento
                                         .gravarPreference()
-                                        .then((result) => () {
-                                              final _url = result['response']
-                                                  ['init_point'];
-                                              launch(_url);
-                                            });
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) => PagePlans()));
+                                        .then((result) {
+                                      _url = result['response']['init_point'];
+                                      launch(_url);
+                                    });
+
+                                    // Navigator.of(context).push(
+                                    //     MaterialPageRoute(
+                                    //         builder: (context) => PagePlans()));
                                   },
                                   icon: Icon(Icons.attach_money),
                                   color: Colors.red[800],
