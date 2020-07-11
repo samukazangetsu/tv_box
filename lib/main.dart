@@ -19,8 +19,22 @@ class _MyAppState extends State<MyApp> {
         initialRoute: '/',
         routes: {
           '/teste': (context) => CardWidget(),
+          '/page-plans': (context) => PagePlans(),
         },
         debugShowCheckedModeBanner: false,
         home: HomePage());
   }
 }
+
+// "redirects": [
+//     {
+//       "source": "/teste",
+//       "destionation": "/teste",
+//       "type": 301
+//     },
+//     {
+//       "source": "/page-plans",
+//       "destionation": "/page-plans",
+//       "type": 301
+//     }
+//   ],

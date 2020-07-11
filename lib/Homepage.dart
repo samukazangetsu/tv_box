@@ -150,8 +150,7 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             FlatButton.icon(
                               onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => PagePlans()));
+                                Navigator.of(context).pushNamed('/page-plans');
                               },
                               icon: Icon(Icons.video_library),
                               label: Text("Confira os planos"),
