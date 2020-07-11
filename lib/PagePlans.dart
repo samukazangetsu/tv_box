@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:mercadopago_sdk/mercadopago_sdk.dart';
+import 'package:tvbox/cardwidget.dart';
 import 'package:tvbox/utils/globals.dart' as globals;
 import 'package:url_launcher/url_launcher.dart';
 
@@ -267,9 +268,11 @@ class _PagePlansState extends State<PagePlans> {
                                 SizedBox(height: 16),
                                 FlatButton.icon(
                                   onPressed: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) => PagePlans()));
+                                    Navigator.of(context).pushNamed('/teste');
+                                    // Navigator.of(context).push(
+                                    //     MaterialPageRoute(
+                                    //         builder: (context) =>
+                                    //             CardWidget()));
                                   },
                                   icon: Icon(Icons.attach_money),
                                   color: Colors.red[800],

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tvbox/Homepage.dart';
+import 'package:tvbox/PagePlans.dart';
+import 'package:tvbox/cardwidget.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
@@ -14,8 +16,11 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage()
-    );
+        initialRoute: '/',
+        routes: {
+          '/teste': (context) => CardWidget(),
+        },
+        debugShowCheckedModeBanner: false,
+        home: HomePage());
   }
 }
