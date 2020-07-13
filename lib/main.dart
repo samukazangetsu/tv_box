@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tvbox/Card-Pages/fail.dart';
-import 'package:tvbox/Card-Pages/pending.dart';
-import 'package:tvbox/Homepage.dart';
-import 'package:tvbox/PagePlans.dart';
-import 'package:tvbox/Card-Pages/sucess.dart';
-import 'Card-Pages/sucess.dart';
+import 'package:tvbox/pages/Homepage.dart';
+import 'package:tvbox/pages/PagePlans.dart';
+import 'package:tvbox/pages/payment_pages/fail.dart';
+import 'package:tvbox/pages/payment_pages/pending.dart';
+import 'package:tvbox/pages/payment_pages/sucess.dart';
 
 void main() {
   runApp(MyApp());

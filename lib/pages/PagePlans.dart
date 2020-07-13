@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:mercadopago_sdk/mercadopago_sdk.dart';
-import 'package:tvbox/Card-Pages/sucess.dart';
 import 'package:tvbox/utils/globals.dart' as globals;
+import 'package:tvbox/widgets/plan_pages_widgets/mounth_plan_widget.dart';
+import 'package:tvbox/widgets/plan_pages_widgets/trim_plan_widget.dart';
+import 'package:tvbox/widgets/plan_pages_widgets/year_plan_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'models/mercado_pago_model.dart';
+import '../models/mercado_pago_model.dart';
 
 class PagePlans extends StatefulWidget {
   @override
@@ -62,7 +64,6 @@ class _PagePlansState extends State<PagePlans> {
               screenSize.width > 580
                   ? Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      //crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Expanded(
                           child: Container(
@@ -70,133 +71,9 @@ class _PagePlansState extends State<PagePlans> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                Expanded(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                          child: Image.asset(
-                                        "lib/assets/mensal.png",
-                                        height: 500,
-                                        width: screenSize.width,
-                                      )),
-                                      Text(
-                                          "Recargas TV EXPRESS 30 DIAS / Melhor Preço e",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold)),
-                                      Text("Entrega Garantida do Produto.",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold)),
-                                      SizedBox(height: 16),
-                                      Text("PREÇO R\$",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.green[300],
-                                              fontSize: 22)),
-                                      SizedBox(height: 16),
-                                      FlatButton.icon(
-                                        onPressed: () {
-                                          Navigator.of(context)
-                                              .pushNamed('/succes-payment');
-                                        },
-                                        icon: Icon(Icons.attach_money),
-                                        color: Colors.red[800],
-                                        label: Text("COMPRAR AGORA"),
-                                        textColor: Colors.white,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(32))),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                          child: Image.asset(
-                                        "lib/assets/mensal.png",
-                                        height: 500,
-                                        width: screenSize.width,
-                                      )),
-                                      Text(
-                                          "Recargas TV EXPRESS 30 DIAS / Melhor Preço e",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold)),
-                                      Text("Entrega Garantida do Produto.",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold)),
-                                      SizedBox(height: 16),
-                                      Text("PREÇO R\$",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.green[300],
-                                              fontSize: 22)),
-                                      SizedBox(height: 16),
-                                      FlatButton.icon(
-                                        onPressed: () {
-                                          Navigator.of(context)
-                                              .pushNamed('/pending-payment');
-                                        },
-                                        icon: Icon(Icons.attach_money),
-                                        color: Colors.red[800],
-                                        textColor: Colors.white,
-                                        label: Text("COMPRAR AGORA"),
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(32))),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                          child: Image.asset(
-                                        "lib/assets/mensal.png",
-                                        height: 500,
-                                        width: screenSize.width,
-                                      )),
-                                      Text(
-                                        "Recargas TV EXPRESS 30 DIAS / Melhor Preço e",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text("Entrega Garantida do Produto.",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold)),
-                                      SizedBox(height: 16),
-                                      Text("PREÇO R\$",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.green[300],
-                                              fontSize: 22)),
-                                      SizedBox(height: 16),
-                                      FlatButton.icon(
-                                        onPressed: () {
-                                          Navigator.of(context)
-                                              .pushNamed('/fail-payment');
-                                        },
-                                        icon: Icon(Icons.attach_money),
-                                        color: Colors.red[800],
-                                        textColor: Colors.white,
-                                        label: Text("COMPRAR AGORA"),
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(32))),
-                                      )
-                                    ],
-                                  ),
-                                )
+                                MounthPageWidget(),
+                                TrimPageWidget(),
+                                YearPageWidget(),
                               ])),
                         )
                       ],

@@ -2,8 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tvbox/PagePlans.dart';
-import 'package:tvbox/WhatsButton.dart';
+import 'package:tvbox/pages/PagePlans.dart';
+import 'package:tvbox/widgets/WhatsButton.dart';
 
 class HomePage extends StatefulWidget {
   @override
