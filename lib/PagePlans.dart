@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:mercadopago_sdk/mercadopago_sdk.dart';
+<<<<<<< HEAD
 import 'package:tvbox/Card-Pages/sucess.dart';
+=======
+import 'package:tvbox/cardwidget.dart';
+>>>>>>> c4b8578c861c75e7413491545209996e81c0b0e5
 import 'package:tvbox/utils/globals.dart' as globals;
 import 'package:url_launcher/url_launcher.dart';
 

@@ -23,9 +23,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+<<<<<<< HEAD
   google_fonts: ^1.1.0
   velocity_x: ^0.4.0
   
+=======
+>>>>>>> c4b8578c861c75e7413491545209996e81c0b0e5
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -57,7 +60,10 @@ flutter:
     - lib/assets/wtv1.jpg
     - "lib/assets/mensal.png"
     - "lib/assets/anual.png"
+<<<<<<< HEAD
     - "lib/assets/logomp.png"
+=======
+>>>>>>> c4b8578c861c75e7413491545209996e81c0b0e5
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

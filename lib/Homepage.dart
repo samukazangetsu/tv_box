@@ -1,11 +1,17 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+<<<<<<< HEAD
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tvbox/PagePlans.dart';
 import 'package:tvbox/WhatsButton.dart';
 
 
+=======
+import 'package:tvbox/PagePlans.dart';
+import 'package:tvbox/WhatsButton.dart';
+
+>>>>>>> c4b8578c861c75e7413491545209996e81c0b0e5
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -87,16 +93,26 @@ class _HomePageState extends State<HomePage> {
                                   Text("Escolha o melhor plano para você!",
                                       style: TextStyle(
                                           fontSize: kIsWeb ? 48 : 64,
+<<<<<<< HEAD
                                           fontWeight: FontWeight.bold,
                                           color: Colors.black,
                                           //eight: 10.0
                                       )),
+=======
+                                          fontWeight: FontWeight.w700,
+                                          color: Colors.black)),
+>>>>>>> c4b8578c861c75e7413491545209996e81c0b0e5
                                   SizedBox(height: 8),
                                   Text(
                                       "Assista o melhor das programações com as nossas recargas.",
                                       style: TextStyle(
+<<<<<<< HEAD
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold,
+=======
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w300,
+>>>>>>> c4b8578c861c75e7413491545209996e81c0b0e5
                                           letterSpacing: 1.0,
                                           color: Colors.black54)),
                                   SizedBox(height: 8),
@@ -136,7 +152,10 @@ class _HomePageState extends State<HomePage> {
                         Text("Escolha seu plano!",
                             style: TextStyle(
                                 fontSize: screenSize.height * 0.08,
+<<<<<<< HEAD
                                 fontWeight: FontWeight.bold,
+=======
+>>>>>>> c4b8578c861c75e7413491545209996e81c0b0e5
                                 letterSpacing: 10.0)),
                         SizedBox(height: screenSize.height * 0.01),
                         Text(
@@ -171,8 +190,13 @@ class _HomePageState extends State<HomePage> {
                           height: screenSize.height * 0.03,
                         ),
                         Text(
+<<<<<<< HEAD
                           "Se você tiver algum problema e deseja entrar em contato, envie um WhatsApp.\n(14) 99657-3278",
                           style: TextStyle(fontSize: screenSize.height * 0.030, fontWeight: FontWeight.bold),
+=======
+                          "Se você tiver algum problema e deseja entrar em contato, envie um WhatsApp.",
+                          style: TextStyle(fontSize: screenSize.height * 0.035),
+>>>>>>> c4b8578c861c75e7413491545209996e81c0b0e5
                           textAlign: TextAlign.center,
                         ),
                         SizedBox(
@@ -181,23 +205,37 @@ class _HomePageState extends State<HomePage> {
                         Center(
                             child: Column(
                           children: [
+<<<<<<< HEAD
                             //Text("(14) 99657-3278",
                                 //style: TextStyle(
                                     //fontSize: screenSize.height * 0.03,
                                     //fontWeight: FontWeight.bold)),
                             //SizedBox(height: screenSize.height * 0.01),
+=======
+                            Text("(14) 99657-3278",
+                                style: TextStyle(
+                                    fontSize: screenSize.height * 0.03,
+                                    fontWeight: FontWeight.bold)),
+                            SizedBox(height: screenSize.height * 0.01),
+>>>>>>> c4b8578c861c75e7413491545209996e81c0b0e5
                             Text("Direitos Reservados a XXXXXX & ZZZZZZ",
                                 style: TextStyle(
                                     fontSize: screenSize.height * 0.02,
                                     fontWeight: FontWeight.bold,
+<<<<<<< HEAD
                                     letterSpacing: 1.0,
+=======
+>>>>>>> c4b8578c861c75e7413491545209996e81c0b0e5
                                     color: Colors.black)),
                             SizedBox(height: screenSize.height * 0.01),
                             Text("Copyright ©",
                                 style: TextStyle(
                                     fontSize: screenSize.height * 0.02,
                                     fontWeight: FontWeight.bold,
+<<<<<<< HEAD
                                     letterSpacing: 1.0,
+=======
+>>>>>>> c4b8578c861c75e7413491545209996e81c0b0e5
                                     color: Colors.black))
                           ],
                         ))
