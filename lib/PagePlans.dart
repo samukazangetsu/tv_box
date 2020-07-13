@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:mercadopago_sdk/mercadopago_sdk.dart';
-<<<<<<< HEAD
 import 'package:tvbox/Card-Pages/sucess.dart';
-=======
-import 'package:tvbox/cardwidget.dart';
->>>>>>> c4b8578c861c75e7413491545209996e81c0b0e5
 import 'package:tvbox/utils/globals.dart' as globals;
 import 'package:url_launcher/url_launcher.dart';
 
@@ -101,7 +97,10 @@ class _PagePlansState extends State<PagePlans> {
                                               fontSize: 22)),
                                       SizedBox(height: 16),
                                       FlatButton.icon(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.of(context)
+                                              .pushNamed('/succes-payment');
+                                        },
                                         icon: Icon(Icons.attach_money),
                                         color: Colors.red[800],
                                         label: Text("COMPRAR AGORA"),
@@ -141,10 +140,8 @@ class _PagePlansState extends State<PagePlans> {
                                       SizedBox(height: 16),
                                       FlatButton.icon(
                                         onPressed: () {
-                                          Navigator.of(context).push(
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      PagePlans()));
+                                          Navigator.of(context)
+                                              .pushNamed('/pending-payment');
                                         },
                                         icon: Icon(Icons.attach_money),
                                         color: Colors.red[800],
@@ -186,10 +183,8 @@ class _PagePlansState extends State<PagePlans> {
                                       SizedBox(height: 16),
                                       FlatButton.icon(
                                         onPressed: () {
-                                          Navigator.of(context).push(
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      PagePlans()));
+                                          Navigator.of(context)
+                                              .pushNamed('/fail-payment');
                                         },
                                         icon: Icon(Icons.attach_money),
                                         color: Colors.red[800],
@@ -273,10 +268,6 @@ class _PagePlansState extends State<PagePlans> {
                                 FlatButton.icon(
                                   onPressed: () {
                                     Navigator.of(context).pushNamed('/teste');
-                                    // Navigator.of(context).push(
-                                    //     MaterialPageRoute(
-                                    //         builder: (context) =>
-                                    //             CardWidget()));
                                   },
                                   icon: Icon(Icons.attach_money),
                                   color: Colors.red[800],
