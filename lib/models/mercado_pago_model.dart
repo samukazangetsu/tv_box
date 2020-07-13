@@ -32,9 +32,9 @@ class MercadoPago {
         }
       },
       "back_urls": {
-        "success": "https://www.success.com",
-        "failure": "http://www.failure.com",
-        "pending": "http://www.pending.com"
+        "success": "http://localhost:63103/#/succes-payment",
+        "failure": "http://localhost:63103/pending-payment",
+        "pending": "http://localhost:63103/fail-payment"
       },
       "auto_return": "approved",
       "payment_methods": {

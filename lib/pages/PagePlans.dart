@@ -16,6 +16,37 @@ class _PagePlansState extends State<PagePlans> {
     final b = "size2";
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
+        appBar: AppBar(
+            title: Text(
+              "TV Box",
+              style: TextStyle(color: Colors.black),
+            ),
+            backgroundColor: Colors.redAccent,
+            elevation: 0,
+            actions: [
+              FlatButton(
+                child: Text("Home",
+                    style: TextStyle(color: Colors.black, fontSize: 18)),
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/');
+                },
+              ),
+              FlatButton(
+                child: Text("Planos",
+                    style: TextStyle(color: Colors.black, fontSize: 18)),
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/page-plans');
+                },
+              ),
+              FlatButton(
+                child: Text("Contato",
+                    style: TextStyle(color: Colors.black, fontSize: 18)),
+                onPressed: () {},
+              ),
+              SizedBox(
+                width: 100,
+              )
+            ]),
         body: Container(
             height: screenSize.height,
             width: screenSize.width,

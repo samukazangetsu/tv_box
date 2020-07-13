@@ -2,8 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tvbox/pages/PagePlans.dart';
+import 'package:tvbox/models/mercado_pago_model.dart';
 import 'package:tvbox/widgets/WhatsButton.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,12 +16,44 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-        backgroundColor: Colors.red[50],
-        body: LayoutBuilder(builder: (context, constraints) {
-          return Center(
-              // height: screenSize.height,
-              // width: screenSize.width,
-              child: Stack(children: [
+      appBar: AppBar(
+        title: Text(
+          "TV Box",
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: Colors.redAccent,
+        elevation: 0,
+        actions: [
+          FlatButton(
+            child: Text("Home",
+                style: TextStyle(color: Colors.black, fontSize: 18)),
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed('/');
+            },
+          ),
+          FlatButton(
+            child: Text("Planos",
+                style: TextStyle(color: Colors.black, fontSize: 18)),
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed('/page-plans');
+            },
+          ),
+          FlatButton(
+            child: Text("Contato",
+                style: TextStyle(color: Colors.black, fontSize: 18)),
+            onPressed: () {},
+          ),
+          SizedBox(
+            width: 100,
+          )
+        ],
+      ),
+      backgroundColor: Colors.red[50],
+      body: LayoutBuilder(builder: (context, constraints) {
+        return Center(
+          // height: screenSize.height,
+          // width: screenSize.width,
+          child: Stack(children: [
             // Desenho superior
             ClipPath(
               child: Container(
@@ -63,17 +96,13 @@ class _HomePageState extends State<HomePage> {
             ),
             screenSize.width < 580
                 ? Center(
-                    // padding: EdgeInsets.only(top: 100),
-                    // width: screenSize.width,
-                    // height: screenSize.height,
                     child: Column(
                       children: [
                         Container(
                             margin: EdgeInsets.only(top: 64),
-                            //height: 160,
-
                             child: Image.asset(
                               "lib/assets/4cards1.png",
+                              height: 200,
                             )),
                         //SizedBox(height: 10),
                         Expanded(
@@ -85,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   Text("Escolha o melhor plano para você!",
                                       style: TextStyle(
-                                        fontSize: kIsWeb ? 48 : 64,
+                                        fontSize: kIsWeb ? 24 : 64,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black,
                                         //eight: 10.0
@@ -97,14 +126,13 @@ class _HomePageState extends State<HomePage> {
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold,
                                           letterSpacing: 1.0,
-                                          color: Colors.black54)),
+                                          color: Colors.black54),
+                                      textAlign: TextAlign.center),
                                   SizedBox(height: 8),
                                   FlatButton.icon(
                                     onPressed: () {
-                                      Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  PagePlans()));
+                                      Navigator.of(context)
+                                          .pushReplacementNamed('/page-plans');
                                     },
                                     icon: Icon(Icons.video_library),
                                     label: Text("Confira os planos"),
@@ -127,34 +155,46 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   )
-                : Center(
-                    heightFactor: screenSize.height,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text("Escolha seu plano!",
-                            style: TextStyle(
-                                fontSize: screenSize.height * 0.08,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 10.0)),
-                        SizedBox(height: screenSize.height * 0.01),
-                        Text(
-                            "Assista o melhor das programações com as nossas recargas.",
-                            style: TextStyle(
-                                fontSize: screenSize.height * 0.035,
-                                fontWeight: FontWeight.bold)),
-                        SizedBox(height: screenSize.height * 0.04),
-                        Container(
-                          height: screenSize.height * 0.45,
-                          child: Image.asset("lib/assets/4cards1.png"),
-                        ),
-                        SizedBox(height: screenSize.height * 0.04),
-                        Row(
+                : Stack(alignment: Alignment.center, children: [
+                    Positioned(
+                      top: 20,
+                      child: Column(
+                        children: [
+                          Text("Escolha seu plano!",
+                              style: TextStyle(
+                                  fontSize: screenSize.height * 0.06,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 10.0)),
+                          SizedBox(height: screenSize.height * 0.01),
+                          Text(
+                              "Assista o melhor das programações com as nossas recargas.",
+                              style: TextStyle(
+                                  fontSize: screenSize.height * 0.025,
+                                  fontWeight: FontWeight.bold)),
+                        ],
+                      ),
+                    ),
+                    Center(
+                      child: Image.asset(
+                        "lib/assets/4cards1.png",
+                        height: screenSize.width * 0.15,
+                      ),
+                    ),
+                    Positioned(
+                        bottom: 110,
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             FlatButton.icon(
                               onPressed: () {
-                                Navigator.of(context).pushNamed('/page-plans');
+                                final _pagamento = MercadoPago();
+                                _pagamento.gravarPreference().then((value) {
+                                  final url = value['response']['init_point'];
+                                  print(url);
+                                  launch(url);
+                                });
+
+                                // Navigator.of(context).pushNamed('/page-plans');
                               },
                               icon: Icon(Icons.video_library),
                               label: Text("Confira os planos"),
@@ -165,35 +205,24 @@ class _HomePageState extends State<HomePage> {
                                       BorderRadius.all(Radius.circular(32))),
                             ),
                           ],
-                        ),
-                        SizedBox(
-                          height: screenSize.height * 0.03,
-                        ),
-                        Text(
-                          "Se você tiver algum problema e deseja entrar em contato, envie um WhatsApp.\n(14) 99657-3278",
-                          style: TextStyle(
-                              fontSize: screenSize.height * 0.030,
-                              fontWeight: FontWeight.bold),
-                          textAlign: TextAlign.center,
-                        ),
-                        SizedBox(
-                          height: screenSize.height * 0.03,
-                        ),
-                        Center(
-                            child: Column(
+                        )),
+                    Positioned(
+                        bottom: 20,
+                        child: Column(
                           children: [
-                            //Text("(14) 99657-3278",
-                            //style: TextStyle(
-                            //fontSize: screenSize.height * 0.03,
-                            //fontWeight: FontWeight.bold)),
-                            //SizedBox(height: screenSize.height * 0.01),
+                            Text(
+                              "Se você tiver algum problema e deseja entrar em contato, envie um WhatsApp.\n(14) 99657-3278",
+                              style: TextStyle(
+                                  fontSize: screenSize.height * 0.022,
+                                  fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center,
+                            ),
                             Text("Direitos Reservados a XXXXXX & ZZZZZZ",
                                 style: TextStyle(
-                                    fontSize: screenSize.height * 0.02,
+                                    fontSize: screenSize.height * 0.018,
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 1.0,
                                     color: Colors.black)),
-                            SizedBox(height: screenSize.height * 0.01),
                             Text("Copyright ©",
                                 style: TextStyle(
                                     fontSize: screenSize.height * 0.02,
@@ -202,10 +231,10 @@ class _HomePageState extends State<HomePage> {
                                     color: Colors.black))
                           ],
                         ))
-                      ],
-                    ),
-                  ),
-          ]));
-        }));
+                  ])
+          ]),
+        );
+      }),
+    );
   }
 }
