@@ -9,7 +9,6 @@ class WhatsButton extends StatefulWidget {
 }
 
 class _WhatsButtonState extends State<WhatsButton> {
-  String _platformVersion = 'Unknown';
 
   @override
   void initState() {
@@ -33,7 +32,6 @@ class _WhatsButtonState extends State<WhatsButton> {
     if (!mounted) return;
 
     setState(() {
-      _platformVersion = platformVersion;
     });
   }
   
