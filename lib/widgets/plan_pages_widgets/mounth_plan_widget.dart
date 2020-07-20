@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:tvbox/pages/payment_pages/mobile_sucess.dart';
-=======
->>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
 
 class MounthPlanWidget extends StatelessWidget {
   final String size;
@@ -21,11 +18,7 @@ class MounthPlanWidget extends StatelessWidget {
             Container(
                 child: Image.asset(
               "lib/assets/mensal.png",
-<<<<<<< HEAD
               height: 300,
-=======
-              height: 500,
->>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
               width: screenSize.width,
             )),
             Text("Recargas TV EXPRESS 30 DIAS / Melhor Preço e",
@@ -40,14 +33,8 @@ class MounthPlanWidget extends StatelessWidget {
                     fontSize: 22)),
             SizedBox(height: 16),
             FlatButton.icon(
-<<<<<<< HEAD
               onPressed: () => MobileSucess(),
-                //Navigator.of(context).pushNamed('/succes-payment');
-=======
-              onPressed: () {
-                Navigator.of(context).pushNamed('/succes-payment');
-              },
->>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
+              //Navigator.of(context).pushNamed('/succes-payment');
               icon: Icon(Icons.attach_money),
               color: Colors.red[800],
               label: Text("COMPRAR AGORA"),

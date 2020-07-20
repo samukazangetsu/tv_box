@@ -32,27 +32,22 @@ class CardSucces extends StatelessWidget {
                 height: 30,
               ),
             ),
-<<<<<<< HEAD
             Container(
               width: 330,
               height: 40,
               margin: EdgeInsets.only(top: 400),
-                          child: TextField(
-
+              child: TextField(
                 textAlign: TextAlign.center,
                 autofocus: false,
                 style: TextStyle(fontSize: 20),
                 decoration: InputDecoration(
-                contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(32),
-                ),
-                fillColor: Colors.white
-                ),
+                    contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(32),
+                    ),
+                    fillColor: Colors.white),
               ),
             ),
-=======
->>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
             Center(
               child: Card(
                   color: Colors.white,

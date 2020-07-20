@@ -16,19 +16,11 @@ class TrimPlanWidget extends StatelessWidget {
           children: [
             Container(
                 child: Image.asset(
-<<<<<<< HEAD
               "lib/assets/90day.png",
               height: 300,
               width: screenSize.width,
             )),
             Text("Recargas TV EXPRESS 90 DIAS / Melhor Preço e",
-=======
-              "lib/assets/mensal.png",
-              height: 500,
-              width: screenSize.width,
-            )),
-            Text("Recargas TV EXPRESS 30 DIAS / Melhor Preço e",
->>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
                 style: TextStyle(fontWeight: FontWeight.bold)),
             Text("Entrega Garantida do Produto.",
                 style: TextStyle(fontWeight: FontWeight.bold)),
@@ -58,19 +50,11 @@ class TrimPlanWidget extends StatelessWidget {
         children: [
           Container(
               child: Image.asset(
-<<<<<<< HEAD
             "lib/assets/90day.png",
             height: 400,
             width: screenSize.width,
           )),
           Text("Recargas TV EXPRESS 90 DIAS / Melhor Preço e",
-=======
-            "lib/assets/mensal.png",
-            height: 400,
-            width: screenSize.width,
-          )),
-          Text("Recargas TV EXPRESS 30 DIAS / Melhor Preço e",
->>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
               style: TextStyle(fontWeight: FontWeight.bold)),
           Text("Entrega Garantida do Produto.",
               style: TextStyle(fontWeight: FontWeight.bold)),
