@@ -20,48 +20,80 @@ class CardSucces extends StatelessWidget {
             Positioned(
               top: 50,
               child: Text(
-                'Nós do Tv box agradecemos sua preferencia.\nVoce recebera seu codigo via Email.\nObrigado!',
+                'Nós do Tv box agradecemos sua preferencia. Obrigado!',
                 style: TextStyle(fontSize: 18, fontFamily: 'Arial'),
                 textAlign: TextAlign.center,
               ),
             ),
             Positioned(
-              bottom: 60,
-              child: Image.asset(
-                "img/logomp.png",
-                height: 30,
-              ),
-            ),
-            Container(
-              width: 330,
-              height: 40,
-              margin: EdgeInsets.only(top: 400),
-              child: TextField(
-                textAlign: TextAlign.center,
-                autofocus: false,
-                style: TextStyle(fontSize: 20),
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(32),
-                    ),
-                    fillColor: Colors.white),
-              ),
-            ),
-            Center(
+              top: screenSize.height * 0.15,
               child: Card(
                   color: Colors.white,
                   elevation: 3,
                   shadowColor: Colors.black,
                   child: SizedBox(
-                    height: 230,
-                    width: 330,
-                    child: Icon(
-                      Icons.done_all,
-                      color: Colors.green,
-                      size: 150,
-                    ),
-                  )),
+                      height: 230,
+                      width: 330,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.done_all,
+                            color: Colors.green,
+                            size: 150,
+                          ),
+                          Text(
+                            "Seu código é: 123456",
+                            style: TextStyle(fontSize: 16),
+                          )
+                        ],
+                      ))),
+            ),
+            Positioned(
+                bottom: screenSize.height * 0.15,
+                child: Container(
+                  alignment: Alignment.center,
+                  width: screenSize.height * 0.5,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Receba seu código por e-mail.\nÉ uma forma mais segura de guardá-lo",
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      TextField(
+                        textAlign: TextAlign.center,
+                        autofocus: false,
+                        style: TextStyle(fontSize: 16),
+                        decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.email),
+                            hintText: "Insira seu e-mail",
+                            contentPadding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(32),
+                            ),
+                            fillColor: Colors.white),
+                      ),
+                      SizedBox(height: 8),
+                      RaisedButton(
+                          child: Text(
+                            "Enviar",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          color: Colors.redAccent,
+                          onPressed: () {}),
+                    ],
+                  ),
+                )),
+            Positioned(
+              bottom: screenSize.height * 0.05,
+              child: Image.asset(
+                "img/logomp.png",
+                height: 30,
+              ),
             ),
           ],
         ),
