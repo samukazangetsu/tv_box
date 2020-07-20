@@ -59,7 +59,7 @@ class _MobileSucessState extends State<MobileSucess> {
             Container(
               padding: EdgeInsets.only(top: 20),
               child: Image.asset(
-                "logomp.png",
+                "img/logomp.png",
                 height: 30,
               ),
             ),

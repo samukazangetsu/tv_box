@@ -50,7 +50,7 @@ class MensalCombo extends StatelessWidget {
         children: [
           Container(
               child: Image.asset(
-            "lib/assets/tv_express_combo_mensal-300x300.png",
+            "img/tv_express_combo_mensal-300x300.png",
             height: 400,
             width: screenSize.width,
           )),

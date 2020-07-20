@@ -50,7 +50,7 @@ class MounthPlanWidget extends StatelessWidget {
         children: [
           Container(
               child: Image.asset(
-            "lib/assets/mensal.png",
+            "img/mensal.png",
             height: 400,
             width: screenSize.width,
           )),

@@ -44,7 +44,7 @@ class _MobileFailState extends State<MobileFail> {
             Container(
               padding: EdgeInsets.only(top: 20),
               child: Image.asset(
-                "logomp.png",
+                "img/logomp.png",
                 height: 30,
               ),
             ),

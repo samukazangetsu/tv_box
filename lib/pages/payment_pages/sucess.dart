@@ -28,7 +28,7 @@ class CardSucces extends StatelessWidget {
             Positioned(
               bottom: 60,
               child: Image.asset(
-                "logomp.png",
+                "img/logomp.png",
                 height: 30,
               ),
             ),
