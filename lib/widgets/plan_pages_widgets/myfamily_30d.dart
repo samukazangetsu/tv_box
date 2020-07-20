@@ -16,7 +16,7 @@ class MensalCombo extends StatelessWidget {
           children: [
             Container(
                 child: Image.asset(
-              "lib/assets/my_family_mensal.png",
+              "img/my_family_mensal.png",
               height: 300,
               width: screenSize.width,
             )),

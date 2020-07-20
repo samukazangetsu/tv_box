@@ -14,17 +14,13 @@ class WebPagePlans extends StatefulWidget {
 }
 
 class _WebPagePlansState extends State<WebPagePlans> {
-  
-  
-  
   @override
   Widget build(BuildContext context) {
-    
     final a = "size1";
     final b = "size2";
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
+        appBar: AppBar(
             title: Text(
               "TV Box",
               style: TextStyle(color: Colors.black),
@@ -55,8 +51,7 @@ class _WebPagePlansState extends State<WebPagePlans> {
                 width: 100,
               )
             ]),
-
-      body: Container(
+        body: Container(
             height: screenSize.height,
             width: screenSize.width,
             child: Stack(children: [
@@ -74,61 +69,33 @@ class _WebPagePlansState extends State<WebPagePlans> {
                     width: screenSize.width),
                 clipper: WaveClipperTwo(),
               ),
-              //Positioned(
-                //child: ClipPath(
-                  //child: Container(
-                    //color: Colors.red[50],
-                    //height: 80,
-                    //width: screenSize.width,
-                  //),
-                  //clipper: WaveClipperOne(reverse: true),
-                //),
-                //bottom: 0,
-                //left: 0,
-              //),
-            //  Positioned(
-              //  child: ClipPath(
-               //   child: Container(
-                 //   color: Colors.redAccent,
-                  //  height: 90,
-                   // width: screenSize.width,
-                 // ),
-                  //clipper: WaveClipperTwo(reverse: true),
-                //),
-                //bottom: 0,
-                //left: 0,
-              //),
               screenSize.width > 580
-              ? SingleChildScrollView(
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              MounthPlanWidget(size: a),
-              TrimPlanWidget(size: a),
-              YearPlanWidget(size: a),
-
-            ],
-          ),
-          Row(
-            children: [
-              AnualCombo(size: a),
-              MensalCombo(size: a),
-              FamilyAnualCombo(size: a)
-            ],
-          ),
-          Row(
-            children: [
-              FamilymensalCombo(size: a)
-            ],
-          )
-        ],
-      ),
-    )
-    :
-    Container(
+                  ? SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              MounthPlanWidget(size: a),
+                              TrimPlanWidget(size: a),
+                              YearPlanWidget(size: a),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              AnualCombo(size: a),
+                              MensalCombo(size: a),
+                              FamilyAnualCombo(size: a)
+                            ],
+                          ),
+                          Row(
+                            children: [FamilymensalCombo(size: a)],
+                          )
+                        ],
+                      ),
+                    )
+                  : Container(
                       padding: EdgeInsets.symmetric(vertical: 64),
                       child: SingleChildScrollView(
                         child: Column(
@@ -156,10 +123,6 @@ class _WebPagePlansState extends State<WebPagePlans> {
                         ),
                       ),
                     )
-
-
-            ])
-          )
-        );
+            ])));
   }
 }

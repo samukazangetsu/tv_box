@@ -16,7 +16,7 @@ class TrimPlanWidget extends StatelessWidget {
           children: [
             Container(
                 child: Image.asset(
-              "lib/assets/90day.png",
+              "img/90day.png",
               height: 300,
               width: screenSize.width,
             )),
@@ -50,7 +50,7 @@ class TrimPlanWidget extends StatelessWidget {
         children: [
           Container(
               child: Image.asset(
-            "lib/assets/90day.png",
+            "img/90day.png",
             height: 400,
             width: screenSize.width,
           )),

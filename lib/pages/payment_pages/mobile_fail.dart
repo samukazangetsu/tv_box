@@ -18,41 +18,39 @@ class _MobileFailState extends State<MobileFail> {
         backgroundColor: Colors.red,
       ),
       body: Center(
-        child: Container(
-          padding: EdgeInsets.only(top: 150),
-                  child: Column(
-            children: [
-              Text(
-                  'Nós do Tv box lamentamos em informar que seu pagamento nao foi efetuado com sucesso.\nTente refazer sua compra ou verificar suas credenciais.\nObrigado!',
-                  style: TextStyle(fontSize: 18, fontFamily: 'Arial'),
-                  textAlign: TextAlign.center,
-                ),
-              SizedBox(height: 16),
-              Card(
-                    color: Colors.white,
-                    elevation: 3,
-                    shadowColor: Colors.black,
-                    child: SizedBox(
-                      height: 230,
-                      width: 330,
-                      child: Icon(
-                        Icons.error,
-                        color: Colors.red,
-                        size: 150,
-                      ),
-                    )),
-              Container(
-                padding: EdgeInsets.only(top: 20),
-                child: Image.asset(
-                  "lib/assets/logomp.png",
-                  height: 30,
-                ),
-              ),            
-            ],
-          ),
-        )
-      ),
-      );
-    
+          child: Container(
+        padding: EdgeInsets.only(top: 150),
+        child: Column(
+          children: [
+            Text(
+              'Nós do Tv box lamentamos em informar que seu pagamento nao foi efetuado com sucesso.\nTente refazer sua compra ou verificar suas credenciais.\nObrigado!',
+              style: TextStyle(fontSize: 18, fontFamily: 'Arial'),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 16),
+            Card(
+                color: Colors.white,
+                elevation: 3,
+                shadowColor: Colors.black,
+                child: SizedBox(
+                  height: 230,
+                  width: 330,
+                  child: Icon(
+                    Icons.error,
+                    color: Colors.red,
+                    size: 150,
+                  ),
+                )),
+            Container(
+              padding: EdgeInsets.only(top: 20),
+              child: Image.asset(
+                "logomp.png",
+                height: 30,
+              ),
+            ),
+          ],
+        ),
+      )),
+    );
   }
 }

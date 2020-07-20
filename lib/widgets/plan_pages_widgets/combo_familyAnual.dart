@@ -16,7 +16,7 @@ class FamilyAnualCombo extends StatelessWidget {
           children: [
             Container(
                 child: Image.asset(
-              "lib/assets/my_family_anual.png",
+              "img/my_family_anual.png",
               height: 300,
               width: screenSize.width,
             )),
@@ -50,7 +50,7 @@ class FamilyAnualCombo extends StatelessWidget {
         children: [
           Container(
               child: Image.asset(
-            "lib/assets/familyanual",
+            "img/familyanual.png",
             height: 400,
             width: screenSize.width,
           )),

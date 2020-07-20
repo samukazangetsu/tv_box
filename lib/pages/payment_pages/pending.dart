@@ -28,7 +28,7 @@ class CardPending extends StatelessWidget {
             Positioned(
               bottom: 60,
               child: Image.asset(
-                "lib/assets/logomp.png",
+                "logomp.png",
                 height: 30,
               ),
             ),

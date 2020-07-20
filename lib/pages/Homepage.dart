@@ -1,10 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:tvbox/models/mercado_pago_model.dart';
 import 'package:tvbox/widgets/WhatsButton.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -101,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                         Container(
                             margin: EdgeInsets.only(top: 64),
                             child: Image.asset(
-                              "lib/assets/4cards1.png",
+                              "img/4cards1.png",
                               height: 200,
                             )),
                         //SizedBox(height: 10),
@@ -128,7 +125,7 @@ class _HomePageState extends State<HomePage> {
                                           letterSpacing: 1.0,
                                           color: Colors.black54),
                                       textAlign: TextAlign.center),
-                                  //SizedBox(height: 8),
+                                  // SizedBox(height: 8),
                                   FlatButton.icon(
                                     onPressed: () {
                                       Navigator.of(context)
@@ -176,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Center(
                       child: Image.asset(
-                        "lib/assets/4cards1.png",
+                        "img/4cards1.png",
                         height: screenSize.width * 0.15,
                       ),
                     ),

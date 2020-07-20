@@ -18,7 +18,7 @@ class YearPlanWidget extends StatelessWidget {
           children: [
             Container(
                 child: Image.asset(
-              "lib/assets/anual.png",
+              "img/anual.png",
               height: 300,
               width: screenSize.width,
             )),
@@ -54,7 +54,7 @@ class YearPlanWidget extends StatelessWidget {
         children: [
           Container(
               child: Image.asset(
-            "lib/assets/anual.png",
+            "img/anual.png",
             height: 400,
             width: screenSize.width,
           )),
