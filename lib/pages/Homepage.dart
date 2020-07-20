@@ -154,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                   )
                 : Stack(alignment: Alignment.center, children: [
                     Positioned(
-                      top: 20,
+                      top: screenSize.height * 0.01,
                       child: Column(
                         children: [
                           Text("Escolha seu plano!\n",
@@ -178,7 +178,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Positioned(
-                        bottom: 200,
+                        bottom: screenSize.height * 0.22,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -204,7 +204,7 @@ class _HomePageState extends State<HomePage> {
                           ],
                         )),
                     Positioned(
-                        bottom: 10,
+                        bottom: screenSize.height * 0.02,
                         child: Column(
                           children: [
                             Text(
