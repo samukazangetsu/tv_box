@@ -50,7 +50,7 @@ class FamilymensalCombo extends StatelessWidget {
         children: [
           Container(
               child: Image.asset(
-            "img/familymensal",
+            "img/familymensal.png",
             height: 350,
             width: 400,
           )),
