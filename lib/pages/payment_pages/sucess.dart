@@ -18,8 +18,8 @@ class CardSucces extends StatelessWidget {
           alignment: Alignment.center,
           children: [
             Positioned(
-              top: screenSize.width * 0.07,
-              width: screenSize.width * 0.5,
+              top: screenSize.width * 0.015,
+              width: screenSize.width * 0.8,
               child: Text(
                 'Nós do Tv box agradecemos sua preferencia. \nObrigado!',
                 style: TextStyle(fontSize: 18, fontFamily: 'Arial'),

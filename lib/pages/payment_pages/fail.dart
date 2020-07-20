@@ -18,9 +18,10 @@ class CardFail extends StatelessWidget {
           alignment: Alignment.center,
           children: [
             Positioned(
+              width: screenSize.width * 0.8,
               top: 50,
               child: Text(
-                'Nós do Tv box lamentamos em informar que seu pagamento nao foi efetuado com sucesso.\nTente refazer sua compra ou verificar suas credenciais.\nObrigado!',
+                'Nós do Tv box lamentamos em informar que seu pagamento não foi efetuado com sucesso.\nTente refazer sua compra ou verificar suas credenciais.\nObrigado!',
                 style: TextStyle(fontSize: 18, fontFamily: 'Arial'),
                 textAlign: TextAlign.center,
               ),
