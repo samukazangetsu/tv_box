@@ -32,6 +32,7 @@ class CardSucces extends StatelessWidget {
                 height: 30,
               ),
             ),
+<<<<<<< HEAD
             Container(
               width: 330,
               height: 40,
@@ -50,6 +51,8 @@ class CardSucces extends StatelessWidget {
                 ),
               ),
             ),
+=======
+>>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
             Center(
               child: Card(
                   color: Colors.white,

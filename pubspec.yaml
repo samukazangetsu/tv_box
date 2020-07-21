@@ -56,12 +56,15 @@ flutter:
     - "lib/assets/mensal.png"
     - "lib/assets/anual.png"
     - "lib/assets/logomp.png"
+<<<<<<< HEAD
     - "lib/assets/90day.png"
     - "lib/assets/my_family_anual.png"
     - "lib/assets/tv_express_combo_mensal-300x300.png"
     - "lib/assets/tv_express_combo_anual.png"
     - "lib/assets/familyanual.png"
     - "lib/assets/familymensal.png"
+=======
+>>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

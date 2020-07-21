@@ -128,7 +128,11 @@ class _HomePageState extends State<HomePage> {
                                           letterSpacing: 1.0,
                                           color: Colors.black54),
                                       textAlign: TextAlign.center),
+<<<<<<< HEAD
                                   //SizedBox(height: 8),
+=======
+                                  SizedBox(height: 8),
+>>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
                                   FlatButton.icon(
                                     onPressed: () {
                                       Navigator.of(context)
@@ -160,7 +164,11 @@ class _HomePageState extends State<HomePage> {
                       top: 20,
                       child: Column(
                         children: [
+<<<<<<< HEAD
                           Text("Escolha seu plano!\n",
+=======
+                          Text("Escolha seu plano!",
+>>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
                               style: TextStyle(
                                   fontSize: screenSize.height * 0.06,
                                   fontWeight: FontWeight.bold,
@@ -181,12 +189,17 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Positioned(
+<<<<<<< HEAD
                         bottom: 200,
+=======
+                        bottom: 110,
+>>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             FlatButton.icon(
                               onPressed: () {
+<<<<<<< HEAD
                                 //final _pagamento = //MercadoPago();
                                 //_pagamento.gravarPreference().then((value) {
                                   //final url = value['response']['init_point'];
@@ -195,6 +208,16 @@ class _HomePageState extends State<HomePage> {
                                 //});
 
                                  Navigator.of(context).pushNamed('/page-plans');
+=======
+                                final _pagamento = MercadoPago();
+                                _pagamento.gravarPreference().then((value) {
+                                  final url = value['response']['init_point'];
+                                  print(url);
+                                  launch(url);
+                                });
+
+                                // Navigator.of(context).pushNamed('/page-plans');
+>>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
                               },
                               icon: Icon(Icons.video_library),
                               label: Text("Confira os planos"),
@@ -207,11 +230,19 @@ class _HomePageState extends State<HomePage> {
                           ],
                         )),
                     Positioned(
+<<<<<<< HEAD
                         bottom: 10,
                         child: Column(
                           children: [
                             Text(
                               "Se você tiver algum problema e deseja entrar em contato, envie um WhatsApp.\n(14) 99657-3278\n\n",
+=======
+                        bottom: 20,
+                        child: Column(
+                          children: [
+                            Text(
+                              "Se você tiver algum problema e deseja entrar em contato, envie um WhatsApp.\n(14) 99657-3278",
+>>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
                               style: TextStyle(
                                   fontSize: screenSize.height * 0.022,
                                   fontWeight: FontWeight.bold),

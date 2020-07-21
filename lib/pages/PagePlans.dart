@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+<<<<<<< HEAD
 import 'package:tvbox/widgets/plan_pages_widgets/combo_MensalFamily.dart';
 import 'package:tvbox/widgets/plan_pages_widgets/combo_familyAnual.dart';
 import 'package:tvbox/widgets/plan_pages_widgets/familycombo.dart';
 import 'package:tvbox/widgets/plan_pages_widgets/mounth_plan_widget.dart';
 import 'package:tvbox/widgets/plan_pages_widgets/myfamily_30d.dart';
+=======
+import 'package:tvbox/widgets/plan_pages_widgets/mounth_plan_widget.dart';
+>>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
 import 'package:tvbox/widgets/plan_pages_widgets/trim_plan_widget.dart';
 import 'package:tvbox/widgets/plan_pages_widgets/year_plan_widget.dart';
 
@@ -98,6 +102,7 @@ class _PagePlansState extends State<PagePlans> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
+<<<<<<< HEAD
                           child: SingleChildScrollView(
                                                       child: Container(
                                 child: Row(
@@ -113,6 +118,17 @@ class _PagePlansState extends State<PagePlans> {
                                   FamilymensalCombo(size: a)
                                 ])),
                           ),
+=======
+                          child: Container(
+                              child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                MounthPlanWidget(size: a),
+                                TrimPlanWidget(size: a),
+                                YearPlanWidget(size: a),
+                              ])),
+>>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
                         )
                       ],
                     )
@@ -130,6 +146,7 @@ class _PagePlansState extends State<PagePlans> {
                                 TrimPlanWidget(size: b),
                                 SizedBox(height: 8),
                                 YearPlanWidget(size: b),
+<<<<<<< HEAD
                                 SizedBox(height: 8),
                                 AnualCombo(size: b),
                                 SizedBox(height: 8),
@@ -138,6 +155,8 @@ class _PagePlansState extends State<PagePlans> {
                                 FamilyAnualCombo(size: b),
                                 SizedBox(height: 8),
                                 FamilymensalCombo(size: b)
+=======
+>>>>>>> 285712a52d79e43781f24afa16622dc5e04aa9f4
                               ],
                             ),
                           ],
