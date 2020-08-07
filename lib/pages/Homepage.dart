@@ -2,6 +2,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:tvbox/widgets/WhatsButton.dart';
+import 'package:tvbox/widgets/plan_pages_widgets/combo_MensalFamily.dart';
+import 'package:tvbox/widgets/plan_pages_widgets/combo_familyAnual.dart';
+import 'package:tvbox/widgets/plan_pages_widgets/familycombo.dart';
+import 'package:tvbox/widgets/plan_pages_widgets/mounth_plan_widget.dart';
+import 'package:tvbox/widgets/plan_pages_widgets/myfamily_30d.dart';
+import 'package:tvbox/widgets/plan_pages_widgets/trim_plan_widget.dart';
+import 'package:tvbox/widgets/plan_pages_widgets/year_plan_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,6 +18,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final a = "size1";
+    final b = "size2";
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -18,7 +27,7 @@ class _HomePageState extends State<HomePage> {
           "TV Box",
           style: TextStyle(color: Colors.black),
         ),
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Color(0xff845df5),
         elevation: 0,
         actions: [
           FlatButton(
@@ -45,7 +54,7 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      backgroundColor: Colors.red[50],
+      backgroundColor: Color(0xffffff),
       body: LayoutBuilder(builder: (context, constraints) {
         return Center(
           // height: screenSize.height,
@@ -54,14 +63,14 @@ class _HomePageState extends State<HomePage> {
             // Desenho superior
             ClipPath(
               child: Container(
-                  color: Colors.red[50],
+                  color: Color(0xff845df5),
                   height: screenSize.height * 0.2,
                   width: screenSize.width),
               clipper: WaveClipperOne(),
             ),
             ClipPath(
               child: Container(
-                  color: Colors.redAccent,
+                  color: Color(0xff845df5),
                   height: screenSize.height * 0.15,
                   width: screenSize.width),
               clipper: WaveClipperTwo(),
@@ -82,7 +91,7 @@ class _HomePageState extends State<HomePage> {
             Positioned(
               child: ClipPath(
                 child: Container(
-                  color: Colors.redAccent,
+                  color: Color(0xff845df5),
                   height: screenSize.height * 0.15,
                   width: screenSize.width,
                 ),
@@ -92,7 +101,7 @@ class _HomePageState extends State<HomePage> {
               left: 0,
             ),
             screenSize.width < 580
-                ? Center(
+                ? SingleChildScrollView(
                     child: Column(
                       children: [
                         Container(
@@ -101,53 +110,81 @@ class _HomePageState extends State<HomePage> {
                               "img/4cards1.png",
                               height: 200,
                             )),
-                        //SizedBox(height: 10),
-                        Expanded(
-                          child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 64),
-                            child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text("Escolha o melhor plano para você!",
-                                      style: TextStyle(
-                                        fontSize: kIsWeb ? 24 : 64,
+                        SizedBox(height: 16),
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 64),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text("Escolha o melhor plano para você!",
+                                    style: TextStyle(
+                                      fontSize: kIsWeb ? 24 : 64,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                      //eight: 10.0
+                                    )),
+                                SizedBox(height: 16),
+                                Text(
+                                    "Assista o melhor das programações com as nossas recargas.",
+                                    style: TextStyle(
+                                        fontSize: 20,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.black,
-                                        //eight: 10.0
-                                      )),
-                                  SizedBox(height: 8),
-                                  Text(
-                                      "Assista o melhor das programações com as nossas recargas.",
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                          letterSpacing: 1.0,
-                                          color: Colors.black54),
-                                      textAlign: TextAlign.center),
-                                  // SizedBox(height: 8),
-                                  FlatButton.icon(
-                                    onPressed: () {
-                                      Navigator.of(context)
-                                          .pushReplacementNamed('/page-plans');
-                                    },
-                                    icon: Icon(Icons.video_library),
-                                    label: Text("Confira os planos"),
-                                    color: Colors.grey[800],
-                                    textColor: Colors.white,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(32))),
+                                        letterSpacing: 1.0,
+                                        color: Colors.black54),
+                                    textAlign: TextAlign.center),
+                                // SizedBox(height: 8),
+                                //FlatButton.icon(
+                                //onPressed: () {
+                                //Navigator.of(context)
+                                //  .pushReplacementNamed('/page-plans');
+                                //},
+                                //icon: Icon(Icons.video_library),
+                                //label: Text("Confira os planos"),
+                                //color: Colors.grey[800],
+                                //textColor: Colors.white,
+                                //shape: RoundedRectangleBorder(
+                                //  borderRadius: BorderRadius.all(
+                                //    Radius.circular(32))),
+                                //),
+                                SizedBox(height: 8),
+                                Text("Enviar mensagem para contato!",
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold)),
+                                SizedBox(height: 8),
+                                WhatsButton(),
+                                Container(
+                                  padding: EdgeInsets.symmetric(vertical: 64),
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      children: [
+                                        Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            MounthPlanWidget(size: b),
+                                            SizedBox(height: 8),
+                                            TrimPlanWidget(size: b),
+                                            SizedBox(height: 8),
+                                            YearPlanWidget(size: b),
+                                            SizedBox(height: 8),
+                                            AnualCombo(size: b),
+                                            SizedBox(height: 8),
+                                            MensalCombo(size: b),
+                                            SizedBox(height: 8),
+                                            FamilyAnualCombo(size: b),
+                                            SizedBox(height: 8),
+                                            FamilymensalCombo(size: b)
+                                          ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                  SizedBox(height: 8),
-                                  Text("Enviar mensagem para contato!",
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold)),
-                                  SizedBox(height: 8),
-                                  WhatsButton()
-                                ]),
-                          ),
+                                ),
+                              ]),
                         ),
                       ],
                     ),
@@ -184,13 +221,6 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             FlatButton.icon(
                               onPressed: () {
-                                //final _pagamento = //MercadoPago();
-                                //_pagamento.gravarPreference().then((value) {
-                                //final url = value['response']['init_point'];
-                                //print(url);
-                                //launch(url);
-                                //});
-
                                 Navigator.of(context).pushNamed('/page-plans');
                               },
                               icon: Icon(Icons.video_library),

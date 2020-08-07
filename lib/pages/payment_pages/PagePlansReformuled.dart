@@ -25,7 +25,7 @@ class _WebPagePlansState extends State<WebPagePlans> {
               "TV Box",
               style: TextStyle(color: Colors.black),
             ),
-            backgroundColor: Colors.redAccent,
+            backgroundColor: Color(0xff845df5),
             elevation: 0,
             actions: [
               FlatButton(
@@ -57,14 +57,14 @@ class _WebPagePlansState extends State<WebPagePlans> {
             child: Stack(children: [
               ClipPath(
                 child: Container(
-                    color: Colors.red[50],
+                    color: Color(0xff845df5),
                     height: 140,
                     width: screenSize.width),
                 clipper: WaveClipperOne(),
               ),
               ClipPath(
                 child: Container(
-                    color: Colors.redAccent,
+                    color: Color(0xff845df5),
                     height: 120,
                     width: screenSize.width),
                 clipper: WaveClipperTwo(),

@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         initialRoute: '/',
         routes: {
-          '/succes-payment': (context) => CardSucces(),
+          '/succes-payment': (context) => CardSuccess(),
           '/pending-payment': (context) => CardPending(),
           '/fail-payment': (context) => CardFail(),
           '/page-plans': (context) => WebPagePlans(),

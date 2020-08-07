@@ -57,14 +57,14 @@ class _PagePlansState extends State<PagePlans> {
             child: Stack(children: [
               ClipPath(
                 child: Container(
-                    color: Colors.red[50],
+                    color: Color(0xff845df5),
                     height: 140,
                     width: screenSize.width),
                 clipper: WaveClipperOne(),
               ),
               ClipPath(
                 child: Container(
-                    color: Colors.redAccent,
+                    color: Color(0xff845df5),
                     height: 120,
                     width: screenSize.width),
                 clipper: WaveClipperTwo(),
@@ -72,7 +72,7 @@ class _PagePlansState extends State<PagePlans> {
               Positioned(
                 child: ClipPath(
                   child: Container(
-                    color: Colors.red[50],
+                    color: Color(0xff845df5),
                     height: 80,
                     width: screenSize.width,
                   ),
@@ -84,7 +84,7 @@ class _PagePlansState extends State<PagePlans> {
               Positioned(
                 child: ClipPath(
                   child: Container(
-                    color: Colors.redAccent,
+                    color: Color(0xff845df5),
                     height: 90,
                     width: screenSize.width,
                   ),

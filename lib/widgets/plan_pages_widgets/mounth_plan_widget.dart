@@ -1,4 +1,7 @@
+// ignore: avoid_web_libraries_in_flutter
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:tvbox/models/mercado_pago_model.dart';
 import 'package:tvbox/pages/payment_pages/mobile_sucess.dart';
 
 class MounthPlanWidget extends StatelessWidget {
@@ -33,7 +36,20 @@ class MounthPlanWidget extends StatelessWidget {
                     fontSize: 22)),
             SizedBox(height: 16),
             FlatButton.icon(
-              onPressed: () => MobileSucess(),
+              onPressed: () {
+                final _pagamento = MercadoPago();
+                Firestore.instance
+                    .collection('codigos')
+                    .document('1 mês')
+                    .collection('items')
+                    .getDocuments()
+                    .then((value) => print(value.documents));
+                //_pagamento.gravarPreference().then((value) {
+                //final url = value['response']['init_point'];
+                //print(url);
+                //launch(url);
+                //});
+              },
               //Navigator.of(context).pushNamed('/succes-payment');
               icon: Icon(Icons.attach_money),
               color: Colors.red[800],
@@ -67,7 +83,12 @@ class MounthPlanWidget extends StatelessWidget {
           SizedBox(height: 16),
           FlatButton.icon(
             onPressed: () {
-              Navigator.of(context).pushNamed('/');
+              Firestore.instance
+                    .collection('codigos')
+                    .document('1 mês')
+                    .collection('items')
+                    .getDocuments()
+                    .then((value) => print(value.documents));
             },
             icon: Icon(Icons.attach_money),
             color: Colors.red[800],

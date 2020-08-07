@@ -2,6 +2,7 @@ import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class WhatsButton extends StatefulWidget {
   @override
@@ -9,7 +10,6 @@ class WhatsButton extends StatefulWidget {
 }
 
 class _WhatsButtonState extends State<WhatsButton> {
-
   @override
   void initState() {
     super.initState();
@@ -31,19 +31,18 @@ class _WhatsButtonState extends State<WhatsButton> {
     // setState to update our non-existent appearance.
     if (!mounted) return;
 
-    setState(() {
-    });
+    setState(() {});
   }
-  
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: MaterialButton(
-        onPressed: (){
-          FlutterOpenWhatsapp.sendSingleMessage("14996573278", "Olá, tudo bem?");
+        onPressed: () {
+          // FlutterOpenWhatsapp.sendSingleMessage("14996573278", "Olá, tudo bem?");
+          launch(
+              'https://api.whatsapp.com/send?phone=5514996573278&text=Ol%C3%A1%2C%20tudo%20bem%3F');
         },
-        
         color: Colors.greenAccent,
         textColor: Colors.white,
         child: Text("WhatsApp", style: TextStyle(fontWeight: FontWeight.bold)),
