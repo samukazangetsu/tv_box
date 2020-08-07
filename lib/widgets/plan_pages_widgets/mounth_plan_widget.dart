@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:tvbox/models/mercado_pago_model.dart';
 import 'package:tvbox/pages/payment_pages/mobile_sucess.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MounthPlanWidget extends StatelessWidget {
   final String size;
@@ -83,12 +84,21 @@ class MounthPlanWidget extends StatelessWidget {
           SizedBox(height: 16),
           FlatButton.icon(
             onPressed: () {
+              final _pagamento = MercadoPago();
               Firestore.instance
-                    .collection('codigos')
-                    .document('1 mês')
-                    .collection('items')
-                    .getDocuments()
-                    .then((value) => print(value.documents));
+                  .collection('codigos')
+                  .document('1 mês')
+                  .collection('items')
+                  .getDocuments()
+                  .then((value) {
+                final code = value.documents[0].data;
+                _pagamento.title = code["code"];
+                _pagamento.price = code["price"];
+                _pagamento.id = value.documents[0].documentID;
+                _pagamento
+                    .gravarPreference()
+                    .then((value) => launch(value["response"]["init_point"]));
+              });
             },
             icon: Icon(Icons.attach_money),
             color: Colors.red[800],

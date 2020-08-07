@@ -4,33 +4,25 @@ String clientId = "4579855677890278";
 String clientSecret = "Tgv5qOi1BYrl2JqWuk65S99b3PRu6jUf";
 
 class MercadoPago {
+  String title;
+  double price;
+  String id;
+
   final mp = MP(clientId, clientSecret);
 
   Future<Map<String, dynamic>> gravarPreference() async {
     final preference = {
       "items": [
         {
-          "id": "item-ID-1234",
-          "title": "Código",
+          "id": id,
+          "title": title,
           "currency_id": "BRL",
           "description": "Código TV BOX",
           "category_id": "TV",
           "quantity": 1,
-          "unit_price": 10.00
+          "unit_price": price
         }
       ],
-      "payer": {
-        "name": "João",
-        "surname": "Silva",
-        "email": "user@email.com",
-        "phone": {"area_code": "11", "number": "4444-4444"},
-        "identification": {"type": "CPF", "number": "19119119100"},
-        "address": {
-          "street_name": "Street",
-          "street_number": 123,
-          "zip_code": "06233200"
-        }
-      },
       "back_urls": {
         "success": "http://localhost:63103/#/succes-payment",
         "failure": "http://localhost:63103/pending-payment",
@@ -43,8 +35,6 @@ class MercadoPago {
         ],
         "installments": 12
       },
-      "notification_url": "https://www.your-site.com/ipn",
-      "external_reference": "Reference_1234",
       "expires": false,
     };
 
